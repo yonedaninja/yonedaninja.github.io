@@ -1,0 +1,66 @@
+\documentclass{amsart}
+
+\usepackage{amsmath,amsfonts,amssymb}
+
+\usepackage{titling}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+
+\usepackage[all]{xy}
+
+\usepackage{tikz-cd}
+
+\usepackage[utf8]{inputenc}
+\def\V{\mathcal{V}}
+\def\VCat{\V\text{-}\mathbf{Cat}}
+\def\Cat{\mathbf{Cat}}
+\def\Ban{\mathbf{Ban}}
+
+\title{Esercizi 2-categorie}
+\subtitle{Primo foglio: categorie arricchite}
+\author{Fosco Loregian}
+
+\begin{document}
+\maketitle
+\begin{itemize}
+	\item Una categoria monoidale è l'ambiente adeguato per definire \emph{oggetti monoide}: un oggetto monoide in $\V$ è un oggetto $M$ con una mappa $\mu : M\otimes M\to M$ che sia associativa, e una mappa $\eta : I\to M$ che faccia da unità per $\mu$: ciò significa che i diagrammi
+	\[\xymatrix{
+	M\otimes M\otimes M \ar[r]^{M\otimes\mu}\ar[d]_{\mu\otimes M}& M\otimes M \ar[d]^\mu\\
+	M\otimes M \ar[r]_\mu & M
+	}\qquad 
+	\xymatrix{
+	I\otimes M\ar[dr]_l \ar[r]^{\eta\otimes M}& M\otimes M \ar[d]^\mu & M\otimes I \ar[l]_{M\otimes \eta}\ar[dl]^r \\
+	& M &
+	}\] siano commutativi. Determinate cosa è un monoide interno alla categoria degli insiemi; determinate cos'è un monoide interno alla categoria degli spazi vettoriali; determinate cos'è un monoide interno alla categoria $\Cat$ delle categorie e funtori.
+	\item Mostrare esplicitamente che $(\mathbf{Set}_*,\lor)$ sottintende una struttura monoidale sulla categoria degli insiemi puntati; mostrare esplicitamente le regole di coerenza per associatore e unitore. Stessa domanda per la categoria degli \emph{spazi topologici} puntati. E' vero che $A\lor -$ commuta coi colimiti?
+	\item Definiamo il \emph{prodotto schiacciato} di due insiemi puntati come il pushout
+	\[\xymatrix{A\lor B \ar[r]\ar[d]& A\times B\ar[d] \\ {*}\ar[r] & A\land B}\]
+	$(A,B)\mapsto A\land B$ è una struttura monoidale su $\mathbf{Set}_*$? Stessa domanda per la categoria degli spazi topologici puntati. E' vero che $A\land -$ commuta coi colimiti?
+	\item Se $F : \V \leftrightarrows \mathcal{W} : G$ è una coppia di funtori aggiunti monoidali, mostrare o confutare che
+	\begin{itemize}
+		\item L'unità $\alpha : 1\Rightarrow GF$ e la counità $\epsilon : FG \Rightarrow 1$ sono trasformazioni naturali monoidali;
+		\item Il ``cambio di base mediante $F$'', $F_* : \VCat \to \mathcal{W}\text{-}\Cat$ ha per aggiunto destro il cambio di base mediante $G$.
+	\end{itemize}
+	\item Dimostrare che la sottocategoria $\mathcal S = \{\varnothing, 1\}\subset\mathbf{Set}$ è cartesiana chiusa; è vero o falso che un insieme coincide con una $\mathcal S$-categoria?
+	\item La categoria dei gruppi è cartesiana chiusa? Possiede una struttura monoidale $\otimes$ per cui è chiusa?
+	\item Sia $G$ un gruppo fissato; nella categoria $\mathbf{Set}^G$ degli insiemi dotati di una azione di $G$ è possibile definire un bifuntore $\otimes_G$ come
+	\[X\otimes_G Y := \text{coeq}\left( \xymatrix{\coprod_{g\in G} X\times Y \ar@<4pt>[r]^-{1\times g}\ar@<-4pt>[r]_-{g\times 1} & X\times Y}\right)
+	\]
+	Questo (insieme all'insieme terminale con azione banale, e alle ovvie coerenze) definisce una struttura monoidale su $\mathbf{Set}^G$?
+	\item Dimostrare che per ogni categoria piccola $A$, la categoria dei funtori $[A,\mathbf{Set}]$ è cartesiana chiusa; dedurne che la categoria degli insiemi con una azione di gruppo è cartesiana chiusa. 
+	\item Mostrare la \emph{regola di interscambio} per trasformazioni $\V$-naturali:
+	\[(\alpha\circ\beta)\bullet(\gamma\circ\delta) = (\alpha\bullet\gamma)\circ(\beta\bullet\delta).\]
+	\item Dimostrare che se esiste una aggiunzione $F : \mathcal V\leftrightarrows \mathcal W :  G$ ($F : \mathcal V\to \mathcal W$ aggiunto sinistro), allora esiste una aggiunzione $F_\dag\dashv G_\dag$.
+	\item Un'equivalenza di categorie è sempre un funtore monoidale forte? Se $F\dashv G$ è un'equivalenza monoidale, dimostrare che $F_\dag\dashv G_\dag$ induce un'equivalenza tra le $\mathcal V$-categorie e le $\mathcal W$-categorie: restano indotti degli isomorfismi di categorie $\mathcal V\text{-}\mathbf{Cat}[A,A']\cong \mathcal W\text{-}\mathbf{Cat}[F_\dag A, F_\dag A']$.
+\end{itemize}
+
+\vspace{\fill}
+\begin{flushright}
+\today,\\
+Fosco Loregian
+\end{flushright}
+\end{document}

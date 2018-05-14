@@ -1,0 +1,3 @@
+cd .antex-cache/
+rm *.tex *.svg *.yml *.dvi *.log *.aux *.fls *_latexmk
+cd ..

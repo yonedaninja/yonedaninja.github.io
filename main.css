@@ -1,0 +1,16 @@
+.antex.inline {}
+
+.antex.display {
+    display: block;
+    text-align: center;
+}
+
+.antex.display > img {
+    margin: .5em auto !important;
+}
+
+.antex.align_environment > img {
+    max-width: initial;
+    transform: translateX(-50%);
+    margin: auto auto auto 50% !important; /* T R B L */
+}

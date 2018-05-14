@@ -1,0 +1,2 @@
+rm index.html
+markdown index.md -s sakura.css >> index.html
