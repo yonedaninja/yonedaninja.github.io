@@ -1,4 +1,4 @@
-\documentclass{amsart}
+\documentclass[a4paper,10pt]{amsart}
 
 \usepackage{amsmath,amsfonts,amssymb}
 
@@ -40,6 +40,7 @@
 	\item Definiamo il \emph{prodotto schiacciato} di due insiemi puntati come il pushout
 	\[\xymatrix{A\lor B \ar[r]\ar[d]& A\times B\ar[d] \\ {*}\ar[r] & A\land B}\]
 	$(A,B)\mapsto A\land B$ è una struttura monoidale su $\mathbf{Set}_*$? Stessa domanda per la categoria degli spazi topologici puntati. E' vero che $A\land -$ commuta coi colimiti?
+	\item Dimostrare che la categoria $\text{Fin}_*$ degli insiemi finiti puntati $\{*,1,\dots,n\}$ e funzioni puntate (le $f : [m]_*\to [n]_*$ tali che $f(*_{[m]})=*_{[n]}$) è equivalente alla categoria degli insiemi finiti e funzioni parziali. Che cosa diventa la struttura monoidale $(\text{Fin}_*,\lor)$ lungo questa equivalenza? Che cosa diventa la struttura monoidale $(\text{Fin}_*,\land$ lungo questa equivalenza?
 	\item Se $F : \V \leftrightarrows \mathcal{W} : G$ è una coppia di funtori aggiunti monoidali, mostrare o confutare che
 	\begin{itemize}
 		\item L'unità $\alpha : 1\Rightarrow GF$ e la counità $\epsilon : FG \Rightarrow 1$ sono trasformazioni naturali monoidali;
@@ -56,6 +57,21 @@
 	\[(\alpha\circ\beta)\bullet(\gamma\circ\delta) = (\alpha\bullet\gamma)\circ(\beta\bullet\delta).\]
 	\item Dimostrare che se esiste una aggiunzione $F : \mathcal V\leftrightarrows \mathcal W :  G$ ($F : \mathcal V\to \mathcal W$ aggiunto sinistro), allora esiste una aggiunzione $F_\dag\dashv G_\dag$.
 	\item Un'equivalenza di categorie è sempre un funtore monoidale forte? Se $F\dashv G$ è un'equivalenza monoidale, dimostrare che $F_\dag\dashv G_\dag$ induce un'equivalenza tra le $\mathcal V$-categorie e le $\mathcal W$-categorie: restano indotti degli isomorfismi di categorie $\mathcal V\text{-}\mathbf{Cat}[A,A']\cong \mathcal W\text{-}\mathbf{Cat}[F_\dag A, F_\dag A']$.
+	\item Data una categoria monoidale $\V$, mostrare che esiste una categoria $\V^\otimes$ così definita:
+	\begin{itemize}
+		\item gli oggetti di $\V^\otimes$ sono $n$-uple di oggetti di $\V$ denotate $[C_1,\dots,C_n]$ (con la convenzione che se $n=0$ la tupla è vuota);
+		\item i morfismi $[C_1,\dots, C_n]\to [D_1,\dots,D_m]$ sono coppie $(\alpha,\{f_j\})$ dove $\alpha$ è una funzione parziale $[n]\to [m]$ con dominio $S_\alpha$ e $\{f_j : \bigotimes_{\{i\mid \alpha(i)=j\}} C_i\to D_j \mid 1\le j\le m\}$ è una famiglia di morfismi di $\V$.
+	\end{itemize}
+	(definire opportunamente la composizione di due morfismi $(\alpha,f), (\beta,g)$). 
+	\begin{itemize}
+		\item Mostrare che esiste un funtore $p : \V^\otimes\to \text{Fin}_*$ che manda $[C_1,\dots,C_n]$ in $[n]_*$; mostrare che $p$ è una \emph{opfibrazione}: per ogni oggetto $\overline C= [C_1,\dots,C_n]\in\V^\otimes$ e ogni morfismo $f : [n]_* \to [m]_*$ in $\text{Fin}_*$ esiste un morfismo $(\theta_f,\bar f) : \overline C \to \overline D = [D_1,\dots, D_m]$ tale che $p(\theta_f,\bar f)=f$, e tale che la composizione con $\bar f$ induce la seguente biiezione per ogni $\overline E = [E_1,\dots,E_d]$ 
+		\[\V^\otimes(\overline D, \overline E) \cong \V^\otimes(\overline C, \overline E) \times_{\text{Fin}_*([n]_*, [d]_*)}\text{Fin}_*([m]_*, [d]_*).\]
+		\item Mostrare che se indichiamo $\V^\otimes_n$ la fibra di $[n]_*$ mediante $p$, $p$ induce un funtore $\V^\otimes_m \to \V^\otimes_n$ per ogni $f : [m]_* \to [n]_*$ in $\text{Fin}_*$.
+		\item Mostrare che $\V^\otimes_0 \cong \{0\}$, $\V^\otimes_1 \cong \V$, e in generale che $\V^\otimes_n \cong \V\times\dots\times\V$ ($n$ volte).
+		\item Mostrare che la corrispondenza che manda $\V$ in $\V^\otimes$ è funtoriale in $\Cat$; 
+		\item Mostrare che $\text{Fin}_* \cong \{0\}^\otimes$ rispetto all'unica struttura monoidale che esiste sulla categoria terminale $\{0\}$; mostrare che $p$ è il funtore indotto dall'unico funtore terminale $\V \to \{0\}$.
+	\end{itemize}
+	\[  \]
 \end{itemize}
 
 \vspace{\fill}
