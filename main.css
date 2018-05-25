@@ -14,3 +14,18 @@
     transform: translateX(-50%);
     margin: auto auto auto 50% !important; /* T R B L */
 }
+
+@media (min-width: 760px) {
+    article > p, article > ul {
+        width: 75%;
+    }
+}
+
+@media print {
+	.sidenote, .marginnote {
+		display: block !important;
+		border-left: 1px solid black;
+		padding-left: 1em;
+		float: none;
+	}
+}
